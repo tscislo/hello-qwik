@@ -59,6 +59,7 @@ li::marker {
 a {
   padding: 0 10px;
   text-decoration: none;
+  display: inline-block;
 }
 
 a,

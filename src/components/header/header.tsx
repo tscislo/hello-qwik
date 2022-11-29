@@ -9,7 +9,9 @@ export default component$(() => {
   return (
     <header>
       <div class="logo">
-        <Link href={"/"}><QwikLogo /></Link>
+        <Link href={"/"}>
+          <QwikLogo />
+        </Link>
       </div>
       <ul>
         <li>
@@ -19,9 +21,7 @@ export default component$(() => {
           <Link href={"/counter"}> Counter</Link>
         </li>
         <li>
-          <a href="https://qwik.builder.io/tutorial/welcome/overview/" target="_blank">
-            Tutorials
-          </a>
+          <Link href={"/progressive"}> Progressive</Link>
         </li>
       </ul>
     </header>
