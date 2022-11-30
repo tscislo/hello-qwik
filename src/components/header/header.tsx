@@ -23,6 +23,12 @@ export default component$(() => {
         <li>
           <Link href={"/progressive"}> Progressive</Link>
         </li>
+        <li>
+          <Link href={"/react-basic"}> React Basic</Link>
+        </li>
+        <li>
+          <Link href={"/react-table"}> React Table</Link>
+        </li>
       </ul>
     </header>
   );
