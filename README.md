@@ -1,16 +1,14 @@
 ## Qwik with Qwik City - resumable, progressive web framework 
 ### Tomasz Ścisło, 02.12.2022
 
-#### Glossary
-
 **Qwik** is a new kind of web framework that can deliver instant loading web applications at any size or complexity. 
 
-Qwik => React
+_Qwik is like React_, so it knows how to render and manage the tree of components
 
-Qwik City => Next.js
+_Qwik City is like Next.js_, so it is a fully opinionated web framework with Qwik as rendering library
 
 ### Why Qwik is unique?
-Qwik is unique because of SPA time to interactive performance.
+Qwik is unique because of time to interactive performance.
 
 ### How does the browser handle JS code in React or Angular that served from the server?
 1. Since JS is single threaded the browser needs to download first HTML (blank page, or some Loading... static text)
@@ -23,11 +21,27 @@ Qwik is unique because of SPA time to interactive performance.
 1. HTML prefilled with serialized state of the application is being downloaded [resumable]
 2. Qwik loader is downloaded and parsed (1kB)
 3. Application is interactive
-4. More app bundles are downloaded by service workers if needed (separate threads) but even those are not interpreted before they are needed [progresive]
+4. More app bundles are downloaded by service workers if needed (separate threads) but even those are not interpreted before they are needed [progressive]
 
+#### Bundle size
+**Main bundle size of classic framework** in general is function that **depends on application complexity** (number of interactions, external libraries, etc.)
+![alt text](./imgs/complexity.webp)
 
+**Main bundle size of ANY application in Qwik** is constant as it **DOES NOT depend on application complexity**
+![alt text](./imgs/complexity_qwik.webp)
 
-**Vite** is a web bundler similar to Webpack and Rollup with tools like dev server HMR but is much more performant.
+#### Progressives
+Qwik aim is to ship to the browser main JS thread as little JS code as possible for it to parse and interpret. Everything else is either lazy loaded or prefetched while user already interacts with the app.
+![alt text](./imgs/progressivnes.webp)
+
+**What, wait Angular and React also do lazy loading...**
+Well in fact the only thing they can do is lazy load code that corresponds with the functionality that is not visible on the current page. Qwik can do exactly the same but for the components that are already rendered.
+
+#### Resumability vs Hydration
+
+![alt text](./imgs/resumability.webp)
+
+![alt text](./imgs/resumability_in_action.webp)
 
 ### Demos
 1. Qwik: https://qwik.azurewebsites.net/
@@ -42,3 +56,4 @@ https://pagespeed.web.dev/report?url=https%3A%2F%2Fhello-react.azurewebsites.net
 Sources
 * https://qwik.builder.io/
 * https://www.builder.io/blog/our-current-frameworks-are-on-we-need-o1
+* https://www.builder.io/blog/hydration-is-pure-overhead
