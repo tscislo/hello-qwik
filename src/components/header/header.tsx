@@ -15,10 +15,10 @@ export default component$(() => {
       </div>
       <ul>
         <li>
-          <Link href={"/ssg"}> SSG</Link>
+          <Link href={"/counter"}> Counter</Link>
         </li>
         <li>
-          <Link href={"/counter"}> Counter</Link>
+          <Link href={"/ssg"}> SSG/CSR</Link>
         </li>
         <li>
           <Link href={"/progressive"}> Progressive</Link>
@@ -28,6 +28,9 @@ export default component$(() => {
         </li>
         <li>
           <Link href={"/react-table"}> React Table</Link>
+        </li>
+        <li>
+          <Link href={"/serialization"}> Serialization</Link>
         </li>
       </ul>
     </header>

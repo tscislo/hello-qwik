@@ -6,6 +6,7 @@ export const CounterComponent = component$(() => {
     <div>
       <p>Counter: {counter.count}</p>
       <p>
+        <button onClick$={() => alert("hello")}>Hello!</button>
         <button onClick$={() => counter.count++}>Count UP</button>
       </p>
     </div>

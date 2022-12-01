@@ -39,13 +39,23 @@ Well in fact the only thing they can do is lazy load code that corresponds with 
 
 #### Resumability vs Hydration
 
+**Resumability** is about pausing execution in the server and resuming execution in the client without having to replay and download all of the application logic.
+
+A good mental model is that Qwik applications at any point in their lifecycle can be serialized and moved to a different VM instance (server to browser). There, the application simply resumes where the serialization stopped. No hydration is required. This is why we say that Qwik applications don't hydrate; they resume.
+
 ![alt text](./imgs/resumability.webp)
 
 ![alt text](./imgs/resumability_in_action.webp)
 
+(*) Tradeoffs of Resumability
+
+This necessitates that applications are written with resumability constraints in mind. It is simply not possible for developers to continue to write applications in a heap-centric way and expect that a better framework can somehow make up for this sub-optimal approach.
+
 ### Demos
 1. Qwik: https://qwik.azurewebsites.net/
 2. React: https://hello-react.azurewebsites.net/
+3. Qwik: https://www.builder.io/
+4. Next.js (SSG): https://www.builder.io/?render=next
 
 ### Time to interactive
 https://pagespeed.web.dev/report?url=https%3A%2F%2Fqwik.azurewebsites.net%2Freact-basic
